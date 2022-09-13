@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8"/>
-	<title th:text="|${#temporals.format(date, 'yyyy/M/d')]の会議室|">2016/5/20の会議室</title>
+	<title th:text="|${#temporals.format(date, 'yyyy/M/d')}の会議室|">2016/5/20の会議室</title>
 </head>
 <body>
 <h3>会議室</h3>
@@ -12,7 +12,7 @@
 
 <ul>
 	<li th:each="room: ${rooms}">
-		<a th:href="@{'/reservations/' + ${date} + '/' + $[room.meetingRoom.roomId}}"
+		<a th:href="@{'/reservations/' + ${date} + '/' + ${room.meetingRoom.roomId}}"
 		   th:text="${room.meetingRoom.roomName}"></a>
 	</li>
 </ul>

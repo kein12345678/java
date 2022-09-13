@@ -1,7 +1,7 @@
 package mrs.domain.model.converter;
 
 import java.sql.Date;
-import java.time.LacalDate;
+import java.time.LocalDate;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
@@ -15,7 +15,7 @@ public class LocalDateConverter implements AttributeConverter<LocalDate, Date> {
 	}
 	
 	@Override
-	public LacalDate convertToEntityAttribute(Date value) {
+	public LocalDate convertToEntityAttribute(Date value) {
 		return value == null ? null : value.toLocalDate();
 	}
 }
