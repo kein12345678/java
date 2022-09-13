@@ -13,11 +13,11 @@ public class Reservation implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer reservationId;
 	
-	private LacalTime startTime;
+	private LocalTime startTime;
 	
-	private LacalTime endTime;
+	private LocalTime endTime;
 	
-	@manyToOne
+	@ManyToOne
 	@JoinColumns({ @JoinColumn(name = "reserved_date"),
 		@JoinColumn(name = "room_id") })
 	private ReservableRoom reservableRoom;

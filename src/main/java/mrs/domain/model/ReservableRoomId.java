@@ -24,8 +24,8 @@ public class ReservableRoomId implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((reservedDate == null)) ? 0 : reservedDate.hashCode();
-		result = prime * result + ((roomId == null)) ? 0 : roomId.hashCode();
+		result = prime * result + ((reservedDate == null) ? 0 : reservedDate.hashCode());
+		result = prime * result + ((roomId == null) ? 0 : roomId.hashCode());
 		return result;
 	}
 	
@@ -34,14 +34,14 @@ public class ReservableRoomId implements Serializable {
 		if (this == obj) return true;
 		if (obj == null) return false;
 		if (getClass() != obj.getClass()) return false;
-		ReservaleRoomId other = (ReservableRoomId) obj;
+		ReservableRoomId other = (ReservableRoomId) obj;
 		if (reservedDate == null) {
 			if(other.reservedDate !=null) return false;
 		} else if (!reservedDate.equals(other.reservedDate))
 			return false;
 		if (roomId == null) {
 			if(other.roomId != null) return false;
-		} else if (!roomId.equalse(other.roomId))
+		} else if (!roomId.equals(other.roomId))
 			return false;
 		return true;	
 	}
