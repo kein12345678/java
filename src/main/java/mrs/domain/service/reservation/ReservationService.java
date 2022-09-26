@@ -26,7 +26,7 @@ public class ReservationService {
 		//悲観ロック
 		ReservableRoom reservable = reservableRoomRepository.findOneForUpdateByReservableRoomId(reservableRoomId);
 		//対象の部屋が予約可能かどうかチェックする
-		//ReservableRoom reservable=reservableRoomRepository.findById(reservableRoomId).orElseGet(null);
+		// ReservableRoom reservable=reservableRoomRepository.findById(reservableRoomId).orElseGet(null);
 		if (reservable==null) {
 			throw new UnavailableReservationException("入力の日付・部屋の組み合わせは予約できません。");
 		}

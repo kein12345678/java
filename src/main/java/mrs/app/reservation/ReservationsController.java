@@ -28,6 +28,16 @@ public class ReservationsController {
 	@Autowired
 	ReservationService reservationService;
 	
+	// 追加
+	@ModelAttribute
+	ReservationForm setUpForm() {
+		ReservationForm form = new ReservationForm();
+		// デフォルト値
+		form.setStartTime(LocalTime.of(9, 0));
+		form.setEndTime(LocalTime.of(10, 0));
+		return form;
+		}
+	
 	@RequestMapping(method = RequestMethod.GET)
 	String reserveForm(@DateTimeFormat(iso = DateTimeFormat.ISO.DATE) @PathVariable("date") LocalDate date,
 			@PathVariable("roomId") Integer roomId, Model model) {
