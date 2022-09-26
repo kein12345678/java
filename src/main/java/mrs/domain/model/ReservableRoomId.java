@@ -31,16 +31,21 @@ public class ReservableRoomId implements Serializable {
 	
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj) return true;
-		if (obj == null) return false;
-		if (getClass() != obj.getClass()) return false;
+		if (this == obj) 
+			return true;
+		if (obj == null) 
+			return false;
+		if (getClass() != obj.getClass()) 
+			return false;
 		ReservableRoomId other = (ReservableRoomId) obj;
 		if (reservedDate == null) {
-			if(other.reservedDate !=null) return false;
+			if(other.reservedDate !=null)
+				return false;
 		} else if (!reservedDate.equals(other.reservedDate))
 			return false;
 		if (roomId == null) {
-			if(other.roomId != null) return false;
+			if(other.roomId != null)
+				return false;
 		} else if (!roomId.equals(other.roomId))
 			return false;
 		return true;	
